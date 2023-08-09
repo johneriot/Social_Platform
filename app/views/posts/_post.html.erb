@@ -1,4 +1,4 @@
-<div id="<%= dom_id post %>">
+<div id="<%= dom_id post %>" class = "post-container">
 
   <p>
     <%= post.title %>
@@ -11,5 +11,13 @@
   <p>
     <%= post.keywords %>
   </p>
+
+  <p>
+    <%= link_to "", post, class: "post-link" %>
+  </p>
+
+  <%= post.images.each do |image| %>
+  <%= image_tag(image, style: "object-fit: cover; width: 300px; height: 600px;" ) %>
+  <% end %>
 
 </div>
